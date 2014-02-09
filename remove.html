@@ -1,0 +1,28 @@
+<html>
+  <head>
+  <script>
+    window.onload=function ()
+    {
+    var aA=document.getElementsByTagName('a');
+    var oU1=document.getElementById('uli');
+
+    for(var i=0; i<aA.length; i++)
+    {
+    aA[i].onclick=function ()
+    {
+      oU1.removeChild(this.parentNode);
+    };
+  }
+};
+</script>
+</head>
+
+  <body>
+    <ul id="uli">
+      <li>asdfeq <a href="javascript::">delete</a></li>
+      <li>wrety <a href="javascript::">delete</a></li>
+      <li>gfds <a href="javascript:;">delete</a></li>
+      <li>asdasdf <a href="javascript:;">delete</a></li>
+    </ul>
+  </body>
+</html>
