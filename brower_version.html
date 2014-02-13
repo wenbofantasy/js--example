@@ -1,0 +1,25 @@
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <Script>
+    with (document) {
+      write ("你的浏览器信息:<OL>");
+        write ("<LI>代码:"+navigator.appCodeName);
+        write ("<LI>名称:"+navigator.appName);
+        write ("<LI>版本:"+navigator.appVersion);
+        write ("<LI>语言:"+navigator.language);
+        write ("<LI>编译平台:"+navigator.platform);
+        write ("<LI>用户表头:"+navigator.userAgent);
+}
+document.write("<li><OL>navigator.appCodeName  的值是" +
+navigator.appCodeName)
+document.write("<li>navigator.appName  的值是  " + navigator.javaEnabled() 
+
+)
+  </Script>
+  <Script>
+    if (document) {
+      document.write("你的浏览器是:MSIE");
+    }
+    else {
+      document.write("你的浏览器是:Navigator");
+    }
+  </Script>

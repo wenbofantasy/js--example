@@ -1,0 +1,141 @@
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <script>
+        function changetext(id)
+        {
+          id.innerHTML="谢谢!";
+        }
+      </script>
+    </head>
+    <body>
+      <h1 onclick="changetext(this)">请点击该文本</h1>
+    </body>
+  </html>
+
+
+
+  <!DOCTYPE html>
+  <html>
+    <body>
+
+      <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">把鼠标移到上面</div>
+
+      <script>
+        function mOver(obj)
+        {
+          obj.innerHTML="谢谢"
+        }
+
+        function mOut(obj)
+        {
+        obj.innerHTML="把鼠标移到上面"
+        }
+      </script>
+
+    </body>
+  </html>
+
+
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <p onmouseover="style.color='blue'" onmouseout="style.color='red'">asdfasdf</p>
+      <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">请点击这里</div>
+
+      <script>
+        function mDown(obj)
+        {
+        obj.style.backgroundColor="#1ec5e5";
+        obj.innerHTML="请释放鼠标按钮"
+        }
+
+        function mUp(obj)
+        {
+          obj.style.backgroundColor="green";
+          obj.innerHTML="请按下鼠标按钮"
+        }
+      </script>
+
+    </body>
+  </html>
+
+
+  <div id="div1">
+    <p id="p1">这是一个段落</p>
+    <p id="p2">这是另一个段落</p>
+  </div>
+
+  <script>
+    var para=document.createElement("p");
+    var node=document.createTextNode("这是新段落。");
+    para.appendChild(node);
+
+    var element=document.getElementById("div1");
+    element.appendChild(para);
+  </script>
+
+
+
+  <html>
+    <body>
+
+      <script type="text/javascript">
+
+        var str="Hello world!"
+        document.write(str.indexOf("Hello") + "<br />")
+        document.write(str.indexOf("World") + "<br />")
+        document.write(str.indexOf("world"))
+
+      </script>
+
+    </body>
+  </html>
+
+
+
+
+
+  <html>
+    <head>
+      <script type="text/javascript">
+        function getElements()
+          {
+              var x=document.getElementsByTagName("input");
+                alert(x.length);
+                  }
+                </script>
+              </head>
+              <body>
+
+                <input name="myInput" type="text" size="20" /><br />
+                <input name="myInput" type="text" size="20" /><br />
+                <input name="myInput" type="text" size="20" /><br />
+                <input name="myInput" type="text" size="20" /><br />
+                <input name="myInput" type="text" size="20" /><br />
+                <input name="myInput" type="text" size="20" /><br />
+                <br />
+                <input type="button" onclick="getElements()"
+                value="How many input elements?" />
+
+              </body>
+            </html>
+
+
+
+            <html>
+              <head>
+                <script type="text/javascript">
+                  function getValue()
+{
+  var x=document.getElementById("myHeader")
+    alert(x.innerHTML)
+}
+</script>
+  </head>
+  <body>
+    <h1 id="myHeader" onclick="getValue()">This is a header</h1>
+    <p>Click on the header to alert its value</p>
+  </body>
+</html>

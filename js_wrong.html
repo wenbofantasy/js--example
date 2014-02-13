@@ -1,0 +1,63 @@
+<script>
+function Object() {
+this.value = 100;
+}
+Object.prototype.name = 'MyObject';
+var obj = {};
+// 显示'MyObject' 与 100
+alert( obj.name );
+alert( obj.value );
+</script>
+
+
+
+<script>
+  function Object() {
+  }
+  // 字典对象(参见示例 4)
+  function Dict() { // AObject()
+    for (var i=0, args=arguments, argn=args.length; i<argn; i++) {
+      this[args[i]] = args[++i];
+    }
+  }
+  // 工具函数
+  function inDict(dict, name) {
+    return {}.hasOwnProperty.call(dict, name);
+  }
+  function getItem(dict, name) {
+    return inDict(dict, name) ? dict[name] : undefined;
+  }
+  // 使用示例
+  var dict1 = new Dict();
+  var dict2 = new Dict(
+  'name1', 1,
+  'hasOwnProperty', 2
+  );
+  // 分别显示 false, undefined, true, 2
+  alert( inDict(dict1, 'hasOwnProperty') );
+  alert( getItem(dict1, 'hasOwnProperty') );
+  alert( inDict(dict2, 'hasOwnProperty') );
+  alert( getItem(dict2, 'hasOwnProperty') );
+</script>
+
+
+<script>
+  // 示例 1:更通用的 print()
+  print = function() {
+    document.writeln.apply(docu ment, arguments);
+  }
+  myPrintf('this is a test.');
+</script>
+
+
+<script>
+  var value = undefined;
+  if (!value) {
+    alert( '' + value);
+  }
+</script>
+
+
+
+<script>
+</script>

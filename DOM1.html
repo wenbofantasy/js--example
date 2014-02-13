@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+  <body>
+    <div id="main">
+    <p id="intro">Hello World!</p>
+    <p>本例演示 <b>getElementById</b> 方法！</p>
+  </div>
+
+    <script>
+      x1=document.getElementById("intro").innerHTML = "new content(blue)";
+      x2=document.getElementById("intro").style.color = "blue";
+      document.write("<p>来自 intro 段落的文本：" + x1 + "</p>");
+    </script>
+
+  </body>
+  <b>*********************</b>
+  <body>
+  <input type="button" onclick="document.body.style.backgroundColor='lavender';" value="Change background color" />
+    <p id="intro" style="color:red">Hellosssssssss World!</p>
+    <script>
+      y=document.getElementById("main").getElementsByTagName("p");
+      document.write("<p>来自 intro 段落的文本：" + y[1].innerHTML + "</p>");
+    </script>
+
+  </body>
+
+
+  <p id="p1">Hello world!</p>
+  <script>
+    function ChangeText()
+    {
+      document.getElementById("p1").innerHTML="New text!";
+    }
+  </script>
+  <input type="button" onclick="ChangeText()" value="Change text">
+
+
+
+
+
+</html>
+

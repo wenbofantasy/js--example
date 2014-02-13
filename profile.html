@@ -1,0 +1,44 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<HTML><Head>
+    <Script Language ="JavaScript">
+      function submitClick(){
+        var Userid = document.forms[0].UserId.value;
+        if(Userid=="" ){alert("用户名称不能为空");return false;}
+        var UserPwd = document.forms[0].UserPwd.value;
+        if(UserPwd==""){alert("用户密码不能为空");return false;}
+        var reUserPwd = document.forms[0].reUserPwd.value;
+        if(reUserPwd==""){alert("请重复密码输入");return false;}
+        if (UserPwd!=reUserPwd){
+          alert("两次输入密码不一致!请重新输入");
+          document.forms[0].UserPwd.value ="";
+          document.forms[0].reUserPwd.value ="";
+          document.forms[0].UserPwd.focus();
+          return false;
+        }
+        var strMsg ="";
+        strMsg = "你的用户名称为:" + Userid + "; 你的密码为:" + reUserPwd +";";
+        document.forms[0].DispInfo.value = strMsg
+        alert(strMsg);
+      }   
+      function ResetClick(){
+        document.forms['InputForm'].reset();
+      }
+      function CallSubmitClick(){
+        document.forms[0].Submit.click();
+      }
+    
+  </Script></Head>
+  <body>
+    <form name="InputForm" method="post" action="">
+      <label> <br>请输入用户名称:<input type="text" name="UserId" id="UserIdid" /></label>
+      <br>请输入用户密码:<input type="password" name="UserPwd" />
+      <br>请重复用户密码:<input type="password" name="reUserPwd" />
+      <br>
+      <br>用户输入信息的反馈: <input type="text" name="DispInfo" size="60" readonly>
+      <br>
+      <input type="button" name="BtnSubmit" value="提交" onclick=javascript:submitClick()>
+      <input type="button" name="BtnReset" value="重写" onclick=javascript:ResetClick()>
+      <br>
+      <input type="button" name="BtnCallSubmit" value="调用提交按钮" onclick=CallSubmitClick()>
+    </form>
+  </body>

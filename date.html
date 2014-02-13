@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<HTML><Head>
+      </Head><body><font color="red">
+      <SCRIPT language=javascript><!--
+        var isnMonths=new initArray("1 月","2 月","3 月","4 月","5 月","6 月","7 月","8 月","9 月","10 月","11 月","12 月")
+        var isnDays=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六","星期日");
+        today=new Date();
+        function initArray(){
+          for(i=0;i<initArray.arguments.length;i++)
+          this[i]=initArray.arguments[i];
+        }
+        function getFullYear(d){
+          yr = d.getYear();
+          if(yr<1000)
+          yr += 1900;
+          return yr;
+        }
+        var StrTemp = getFullYear(today) +"年" +"&nbsp;" + isnMonths[today.getMonth()];
+        StrTemp = StrTemp + "" + today.getDate()+"日&nbsp;"+ isnDays[today.getDay()];
+        document.write(StrTemp);
+        //-->
+     //  <!--today =  new Date();-->
+     //  <!--document.write(today);-->
+    </SCRIPT></font>
+    <script>
+      var log = document.getElementById('log'),
+      i = '', 
+      out = [];
+      for (i in window) {
+        if ( /^on/.test(i)) { out[out.length] = i; }
+      }
+      document.write(i);
+      document.write(out);
+      <!--log.innerHTML = out.join(', ');-->
+    </script>
+</body></HTML>

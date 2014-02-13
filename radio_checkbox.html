@@ -1,0 +1,55 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<HTML><Head>
+    <Script Language ="JavaScript">
+      function submitClick(){
+        var selValue = Select_check("cbx");
+        if(selValue == 0){
+          alert("你没有做出你喜爱的水果的任何选择,请作出选择!");
+          return false;
+          }else{
+          var selActionValue = Select_check("radio1");
+          if(selActionValue == 0){
+            alert("请你做出购买还是不够买的选择!");
+            return false;
+            }else{
+        var strMsg ="";
+        strMsg = "你喜欢的水果有: " + selValue + "; 并且你决定了:" + selActionValue;
+        document.forms[0].DispInfo.value = strMsg
+      }   
+          //  strMsg = "你喜欢的水果有" + selValue;
+          // strMsg = strMsg + ",并且你决定了:" + selActionValue;
+          //  alert(strMsg);
+         // }
+        }
+      }
+      function Select_check(objName){
+        var obj=document.getElementsByName(objName);
+        var selArray = new Array();
+        for(var i=0;i<obj.length;i++){
+          if(obj[i].checked){
+            selArray[i]=obj[i].value;
+          }
+        }
+        return selArray;
+      }
+    </script>
+  </Script></Head><body>
+  <input type="text" name="PageNum"
+  onkeypress="var k=event.keyCode; return k>=48&&k<=57||k==46"
+  onpaste="return !clipboardData.getData('text').match(/\D/)"
+  ondragenter="return false"
+  style="ime-mode:Disabled">
+  <form name="InputForm" method="post" action="">
+    你喜欢的水果有?<br>
+    <input type=checkbox name=cbx value=苹果>苹果<br>
+    <input type=checkbox name=cbx value=西瓜>西瓜<br>
+    <input type=checkbox name=cbx value=梨子>梨子<br>
+    <input type=checkbox name=cbx value=桃子>桃子<br><br>
+    你决定的怎么做?<br>
+    <input type=radio name=radio1 value="购买上述产品">购买上述产品<br>
+    <input type=radio name=radio1 value="不购买上述产品">不购买上述产品<br><br>
+    <input type="button" name="Submit" value="提交" onclick=javascript:submitClick()>
+    <input type="Reset" name="Reset" value="重置">
+      <br>用户输入信息的反馈: <input type="text" name="DispInfo" size="60" readonly>
+</form></body>
+</HTML>

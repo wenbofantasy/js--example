@@ -1,0 +1,21 @@
+<style>
+.plot {
+position:absolute;
+background:rgb(175,50,50);
+width: 200px;
+height: 200px;
+border-radius: 200px;
+display: block;
+top:0;
+left:0;
+}
+</style>
+<div class="plot"></div>
+<script>
+  var plot = document.querySelector('.plot'),
+  offset = plot.offsetWidth / 2;
+  document.addEventListener('click', function(ev) {
+    plot.style.left = (ev.pageX - offset) + 'px';
+    plot.style.top = (ev.pageY - offset) + 'px';
+  }, false);
+</script>

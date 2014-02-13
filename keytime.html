@@ -1,0 +1,22 @@
+<script>
+  var resources = document.querySelector('#resources'),
+  log = document.querySelector('#log'),
+  time = 0;
+
+  document.addEventListener('keydown', keydown, false);
+  document.addEventListener('keyup', keyup, false);
+
+  function keydown(ev) {
+    if (time === 0) { 
+      time = ev.timeStamp; 
+      log.classList.add('animate');
+    }
+  }
+  function keyup(ev) {
+    if (time !== 0) {
+      time = 0;
+      log.classList.remove('animate');
+      log.innerHTML = ev.timeStamp - time;
+    }
+  }
+</script>

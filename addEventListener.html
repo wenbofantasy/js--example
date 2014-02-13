@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<Script>
+  var log = document.getElementById('log'),
+  out = '';
+
+  document.addEventListener('click', logeventinfo, false);
+  document.addEventListener('keypress', logeventinfo, false);
+
+  function logeventinfo (ev) {
+    log.innerHTML = '';
+    out = '<ul>';
+      for (var i in ev) {
+        if (typeof ev[i] === 'function' || i === i.toUpperCase()) {
+          continue;
+        }
+        out += '<li><span>'+i+'</span>: '+ev[i]+'</li>';
+      }
+      log.innerHTML += out + '</ul>';
+  }
+</Script>
